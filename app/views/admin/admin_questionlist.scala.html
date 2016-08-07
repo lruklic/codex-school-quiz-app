@@ -1,0 +1,131 @@
+@(questions: List[models.Question]) 
+
+@import views.html.adminView._;
+@import views.html.init._;
+@import _root_.enums._;
+@import _root_.session._;
+
+<html>
+<head>
+
+@head()
+
+<link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/admin/questionList.css")">
+<script type="text/javascript" src="@routes.Assets.at("/javascripts/admin/questionList.js")"></script>
+
+</head>
+
+@filter = {	
+	@Messages("question.filter.type"):
+	<select id="filterType">
+	@for(filterType <- FilterType.values()){
+		<option value="@filterType">@Messages(filterType.toString())</option>
+	}
+	</select> 
+	@Messages("question.filter"):
+	<input id="filter" type="text" maxlength="30"/>
+
+}
+
+@exportQuestions = {
+	<span class="export-panel">
+		<span class="tooltip-custom export-questions" title="@Messages("tooltip.question.export.detailed")">@Messages("question.export"):</span>
+		<a class="tooltip-custom export export-csv" href="@routes.PortController.exportQuestions("csv")" title="@Messages("tooltip.export.csv.detailed")">@Messages("export.csv")</a>
+		<a class="tooltip-custom export export-xls" href="@routes.PortController.exportQuestions("xls")" title="@Messages("tooltip.export.xls.detailed")">@Messages("export.xls")</a>
+		<a class="export export-pdf" href="@routes.PortController.exportQuestions("pdf")">@Messages("export.pdf")</a>
+	</span>
+}
+
+<body>
+		@adminHeader()
+
+		<div class="questionlist-panel">
+			<div class="col-sm-12">
+				<h2 class="questionslist-title">@Messages("questions")</h2>
+			</div>
+
+			<div class="row col-sm-12">
+				<div class="col-sm-4">@exportQuestions</div> 
+				<div class="col-sm-4">
+					<div class="col-sm-3"><span id="import" class="tooltip-custom import-questions" title="@Messages("tooltip.question.import.detailed")">@Messages("question.import")</span></div>
+					<div class="col-sm-6">
+						<form enctype="multipart/form-data">
+							<input type="file" accept=".csv,.txt" id="import-input" name="import-input">
+						</form>
+					</div>
+					<div class="col-sm-3"><button id="import-button">@Messages("import")</button></div>
+				</div>	 
+			</div>
+			
+			<div class="row col-sm-12">
+				@alert()
+			</div>
+			
+			<div class="col-sm-12 top-buffer">
+			
+				<table id="question-table-@session.get("username")" class="question-table display cell-border" width="100%">
+					<thead>
+						<tr>
+							<th>@Messages("question.hashtag")</th>
+							<th>@Messages("question.text")</th>
+							<th>@Messages("question.type")</th>
+							<th>@Messages("question.subject")</th>
+							<th>@Messages("question.chapter")</th>
+							<th>@Messages("question.submitter")</th>
+							<th></th>
+						</tr>
+					</thead>
+	
+					<tbody class="dt-right">
+						@for(q <- questions) {
+						<tr id="question-@q.id">
+							<td class="table.questionId">@q.id</td>
+							<td class="table-questionText">@q.questionText</td>
+							<td class="table-questionType">@Messages(q.questionType.toString())</td>
+							<td class="table-subject">@Messages(q.subject.name)</td>
+							<td class="table-chapters">@if(q.chapters != null && q.chapters.contains(";")) { @Messages("question.chapter.multiple") } else {
+								@Messages(q.chapters) }</td>
+							<td class="table-submitter">@q.author.getName()</td>
+	
+							<td>
+								@if(q.author.username.equals(Session.getUsername())) {
+								<div class="btn-group inline pull-left">
+									<a class="tooltip-custom btn btn-responsive btn-primary" href="@routes.QuestionController.edit(q.id)" title="@Messages("tooltip.question.edit")">@Messages("question.edit")</a> 
+									<!-- <a class="tooltip-custom btn btn-info" href="#" title="@Messages("tooltip.question.explanation")">@Messages("question.explanation")</a> -->
+									<a class="tooltip-custom delete-button btn btn-responsive btn-danger" href="@routes.QuestionController.deleteQuestion(q.id)" title="@Messages("tooltip.question.delete")">@Messages("question.delete")</a>								
+								</div>
+								}
+							</td>
+						</tr>
+						}
+					</tbody>
+	
+				</table>
+			
+			</div>	
+		</div>
+
+	<div id="import-modal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">@Messages("file.import")</h4>
+				</div>
+				<div class="modal-body">
+					<table class="modal-table">
+						<thead></thead>
+						<tbody></tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">@Messages("modal.close")</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+</body>
+</html>

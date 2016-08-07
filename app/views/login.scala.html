@@ -1,0 +1,66 @@
+@(form: Form[forms.LoginForm], mottoNumber: Integer)
+
+@import views.html.init._;
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+	@head()
+	
+	<script type="text/javascript" src="@routes.Assets.at("/javascripts/login.js")"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/login.css")">
+	
+	<script type="text/javascript" src="@routes.Assets.at("/javascripts/login/facebook.login.js")"></script>
+</head>
+
+</head>
+<body>
+
+	<div class="middlePage">
+	<div class="page-header">
+  		<h1 class="logo">@Messages("app.name") <span class="motto">@Messages("app.motto" + mottoNumber)</span></h1>
+	</div>
+
+	<div class="panel panel-info">
+  		<div class="panel-heading">
+    		<h3 class="panel-title">@Messages("login.signin")</h3>
+  		</div>
+  		<div class="panel-body">
+  		<div class="row">
+  		
+  			<div class="col-md-5">
+				<a href="#" onclick="fb_login();"><img src="http://techulus.com/buttons/fb.png" /></a><br/>
+				<a href="#"><img src="http://techulus.com/buttons/tw.png" /></a><br/>
+				<a href="#"><img src="http://techulus.com/buttons/gplus.png" /></a>
+			</div>
+	
+			<div class="col-md-7" style="border-left:1px solid #ccc;height:220px">
+		
+				<div class="form-horizontal">
+				@alert()
+					@helper.form(routes.LoginController.authenticate) {
+					<fieldset>
+						<input id="username" name="usernameOrEmail" type="text" placeholder="@Messages("login.usernameoremail")" value="@form("email").value" class="form-control input-md">
+						<div class="spacing"></div>
+						<input id="password" name="password" type="password" placeholder="@Messages("login.password")" class="form-control input-md">
+						<div class="spacing">
+							<a href="#"><small>@Messages("login.password.forgot")</small></a>
+							<a class="register-link" href='@routes.RegisterController.register'><small>@Messages("login.register")</small></a><br/>
+						</div>
+						<button class="btn btn-info btn-sm pull-right" type="submit">@Messages("login")</button>
+					</fieldset>
+					}
+				</div>
+		
+			</div>
+			
+		</div>
+		</div>
+	</div>
+	<a href="#">@Messages("login.about")</a>
+	</div>
+
+</body>
+</html>

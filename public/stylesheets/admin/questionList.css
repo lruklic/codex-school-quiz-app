@@ -1,0 +1,69 @@
+/* Questions list css tags*/
+
+
+.question-table {
+	color: #444;
+}
+
+.question-table thead tr th {
+	color: #fff;
+	background-color: #444;
+}
+
+.question-table thead tr th:hover {
+	cursor: pointer;
+	color: #2CA3C4;
+}
+
+.top-buffer { margin-top:20px; }
+
+.table-questionText-data {
+	height: 50px;
+	overflow: hidden;
+}
+
+.table-questionText {
+	width: 400px;
+	height: 60px;
+}
+
+.table-chapters {
+	width: 300px;
+}
+
+.table-submitter {
+	width: 150px;
+}
+
+.table-questionType, .table-subject {
+	width: 150px;
+}
+
+.export-questions, .import-questions {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.export {
+	padding-left: 10px;
+}
+
+.extra {
+	padding-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .btn-responsive {
+    padding:2px 4px;
+    font-size:80%;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .btn-responsive {
+    padding:4px 9px;
+    font-size:90%;
+    line-height: 1.2;
+  }
+}

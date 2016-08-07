@@ -1,0 +1,58 @@
+app.name = Codex
+app.motto = Ignorance is bliss, but knowledge is power.
+
+navigation.home=Home
+navigation.questions=Questions
+navigation.profile=Profile
+navigation.logout=Logout
+
+login=Login
+login.signin=Sign in
+login.username=Username
+login.usernameoremail=Username or email
+login.password=Password
+
+login.error.values=Please fill in all values
+login.error.username=Username doesn't exist
+login.error.password=Password is incorrect
+
+questions=Pitanja
+question.text=Question Text
+question.input=Question Input
+question.type=Question Type
+question.grade=Grade
+question.subject=Subject
+question.chapter=Subject chapter
+question.chapter.multiple=Multiple chapters
+question.content=Subject content
+question.correct=Correct Answer
+question.incorrect=Incorrect Answer
+question.multiple.number=# of answers
+question.submit=Submit
+question.submitter=Submitted by
+
+admin.header.hello=Hello
+
+MULTIPLE_CHOICE=Multiple choice
+YES_NO=True/False
+INPUT_ANSWER=Input Answer
+MULTIPLE_ANSWERS=Multiple answers
+
+GIMN_1ST=First grade
+GIMN_2ND=Second grade
+GIMN_3RD=Third grade
+GIMN_4TH=Fourth grade
+GRADE_EXAM=Grade exam
+
+HISTORY=History
+BIOLOGY=Biology
+
+INTRO_TO_HISTORY=Intro to history
+ANCIENT_HISTORY=Ancient history
+EASTERN_CIVILIZATIONS=Eastern civilizations
+OLD_GREECE=Old Greece
+ROME_KINGS=Rome-Kings and Republic
+ROME_EMPIRE=Rome-Empire
+
+INTRO_TO_BIOLOGY=Intro to biology
+

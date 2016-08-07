@@ -1,0 +1,58 @@
+@(form: Form[forms.NoveltyForm])
+
+@import views.html.init._;
+@import views.html.adminView._;
+@import views.html.news._;
+@import enums._;
+
+<html>
+<head>
+@head()
+<link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/admin.css")">
+<link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/news.css")">
+<script type="text/javascript" src="@routes.Assets.at("/javascripts/admin.js")"></script>
+</head>
+
+<body>
+	<header> @adminHeader() </header>
+
+	<content>
+	<div class="news">
+		@helper.form(routes.NewsController.submit) {
+		<fieldset>
+			<legend>@Messages("news.input")</legend>
+			<p><label>@Messages("news.title")</label></p>
+			<input name="noveltyTitle" type="text" value='@form("noveltyTitle").value' maxlength="30"/>
+			
+			<p><label>@Messages("news.text")</label></p>
+			<textarea name="noveltyText" rows="4" cols="50"/>@form("noveltyText").value</textarea>
+			
+			<ul class="news">
+				<li class="news newsType">
+					<p><label>@Messages("news.type")</label></p> 
+					<select name="newsType" value='@form("questionType").value'> 
+					@for(newsType <- NewsType.values()){
+						<option value="@newsType" @if(form("newsType").value !=null && form("newsType").value== newsType.toString()) {selected="selected"}>@Messages(newsType.toString())</option>
+					}
+					</select>
+				</li>
+
+				<li class="news newsPriority">
+					<p><label>@Messages("news.priority")</label></p>
+					<select name="newsPriority" value='@form("newsPriority").value'> 
+					@for(newsPriority <- NewsPriority.values()){
+						<option value="@newsPriority" @if(form("newsPriority").value != null && form("newsPriority").value == newsPriority.toString()) {selected="selected"}>@Messages(newsPriority.toString())</option> 
+					}
+					</select>
+				</li>
+			</ul>
+			
+			<button class="submit-button" type="submit">@Messages("question.submit")</button>
+			
+		</fieldset>
+		}
+	</div>
+	</content>
+</body>
+
+</html>

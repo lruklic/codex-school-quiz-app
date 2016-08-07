@@ -1,0 +1,13 @@
+#postlist {
+	margin-top: 5px;
+	border-width: 1px;
+	border-style: groove;
+	border-color: #000;
+}
+
+.novelty-text {
+	font-family: Verdana, Geneva, sans-serif;
+	padding-left: 20px;
+	color: #000;
+	padding-bottom: 20px;
+}

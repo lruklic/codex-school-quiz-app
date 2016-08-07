@@ -1,0 +1,35 @@
+/* Questions input css tags */
+
+.btn-default {
+	color: #333; 
+	background-color:#FFF; 
+	border-color: #dce4ec
+}
+
+.image-preview {
+	height: 223px;
+}
+
+.correct-answer-border {
+	border-color: #80ff80;
+}
+
+.incorrect-answer-border {
+	border-color: #ff8080;
+}
+
+.input-advanced {
+	cursor: pointer;
+	font-style: italic;
+	text-decoration: underline;
+}
+
+.bootstrap-switch { 
+	height: 2.0em 
+}
+
+.top-buffer {
+	padding-top: 15px;
+}
+
+.hidden { display: none; }

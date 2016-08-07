@@ -1,0 +1,30 @@
+@(user: models.User)
+
+@import views.html.playerView._;
+@import views.html.adminView._;
+@import views.html.init._;
+@import models.enums.UserType;
+
+<html>
+
+<head>
+	
+	@head()
+	
+</head>
+
+<body>
+
+	<div class="container">
+	
+		@if(session.get("userType") == "PLAYER") {
+			@playerHeader()
+		} else {
+			@adminHeader()
+		}
+		
+	</div>
+
+</body>
+
+</html>

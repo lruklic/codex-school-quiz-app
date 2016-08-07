@@ -1,0 +1,73 @@
+/* Header css tags */
+
+header {
+	background-color: #444;
+	height: 100px;
+}
+
+h1 {
+	margin-left: 50px;
+	margin-top: 50px;
+    color: #fff;
+    font-style: italic;
+}
+
+.questionslist-title {
+	color: #fff;
+    font-style: italic;
+}
+
+.logo {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 80px;
+	height: 80px;
+}
+
+.nav ul {
+	list-style: none;
+  	text-align: center;
+}
+
+.nav li {
+  	padding-top: 30px;
+  	display: inline-block;
+ 	margin-right: -4px;
+ 	font-family: 'Oswald', sans-serif;
+ 	font-size: 1.4em;
+ 	line-height: 50px;
+ 	width: 120px;
+ 	height: 50px;
+}
+ 
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+
+.nav a:hover {
+  background-color: #2CA3C4;
+  color: #444;
+}
+
+.nav a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default;
+}
+
+.hello {
+	float: right;
+	color: white;
+	float: right;
+	margin: 10px;
+	padding-top: 20px;
+}
+
+.hello-name {
+	font-style: italic;
+	font-weight: bold;
+}

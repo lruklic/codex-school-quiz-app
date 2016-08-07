@@ -1,0 +1,76 @@
+@(form: Form[forms.RegisterForm])
+
+@import views.html.init._;
+@import views.html.register._;
+@import enums._;
+
+<html>
+
+<head>
+
+	@head()
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/register/register.css")">	
+	<script type="text/javascript" src="@routes.Assets.at("javascripts/register/register.js")"></script>
+	
+</head>
+
+<body>
+	<div class="middlePage">
+		
+		<div class="col-md-12">
+			@helper.form(action = routes.RegisterController.submit, 'id -> "registerForm") {
+			<form class="form-horizontal">
+				<legend>@Messages("register")</legend>
+				
+				<div class="form-group">
+					<div class="row">
+						<div class="col-xs-4">
+							<input class="form-control username-input" name="username" type="text" id="username" value='@form("username").value' placeholder="@Messages("register.username")"/>
+						</div>
+						<div class="col-xs-4">
+							<input class="form-control password-input" name="password" type="password" id="password" placeholder="@Messages("register.password")"/>
+						</div>
+						<div class="col-xs-4">
+							<input class="form-control password-input" name="retype" type="password" id="retype" placeholder="@Messages("register.password.retype")"/>
+						</div>
+					</div>
+					
+					<div class="row top-buffer">
+						<div class="col-xs-8">
+							<select class="form-control" name="userType" id="userType" value='@form("userType").value'> 
+								@for(ut <- UserType.values()){
+									<option value="@ut" @if(form("userType").value !=null && form("userType").value== ut.toString()) {selected="selected"}>@Messages(ut.toString())</option> 
+								}
+							</select>
+						</div>
+						<div class="col-xs-4">
+							<img id="userType-info" class="tooltip-info" src="@routes.Assets.at("images/info.png")" title="@Messages("info.register.player")" alt="INFO">
+						</div>
+					</div>
+					
+					<div class="row top-buffer">
+						<div class="col-xs-4">
+							<input class="form-control firstname-input" name="firstName" type="text" id="firstName" placeholder="@Messages("register.firstName")"/>						
+						</div>
+						<div class="col-xs-4">
+							<input class="form-control lastname-input" name="lastName" type="text" id="lastName" placeholder="@Messages("register.lastName")" />
+						</div>
+						<div class="col-xs-4">
+							<input class="form-control email-input" name="email" type="email" id="email" placeholder="@Messages("register.email")" />
+						</div>
+					</div>
+					
+					
+				</div>
+			
+			</form>
+			
+			<button type="submit">@Messages("register")</button>
+			}
+		</div>
+		
+	</div>
+</body>
+
+</html>

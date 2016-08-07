@@ -1,0 +1,197 @@
+app.name = Codex
+app.motto1 = Ignorance is bliss, but knowledge is power.
+app.motto2 = Geniuses are made, not born.
+app.motto3 = An investment in knowledge pays the best interest.
+app.motto4 = There is no wealth like knowledge, no poverty like ignorance.
+app.motto5 = Education is the best friend. An educated person is respected everywhere. Education beats the beauty and the youth.
+app.motto6 = Poor people cannot rely on the government to come to help you in times of need. You have to get your education. Then nobody can control your destiny.
+
+navigation.home=Početna
+navigation.questions=Pitanja
+navigation.questions.add=Dodaj novo pitanje
+navigation.questions.list=Prikaz pitanja
+navigation.profile=Profil
+navigation.quiz=Kviz
+navigation.scripts=Skripte
+navigation.scripts.add=Dodaj skriptu
+navigation.logout=Odjava
+navigation.back=Nazad
+
+footer.terms=Uvjeti pružanja usluge
+footer.contact=Kontakt
+footer.authors=Autori sadržaja
+footer.programmers=Programeri
+
+login=Prijava
+login.signin=Prijavi se
+login.username=Korisničko ime
+login.usernameoremail=Korisničko ime ili e-mail
+login.password=Lozinka
+login.password.forgot=Zaboravili ste lozinku?
+login.about=O nama
+login.register=Nemate račun? Registrirajte se!
+
+login.error.values=Molimo Vas da popunite sva polja
+login.error.username=Korisničko ime ne postoji
+login.error.password=Lozinka nije ispravna
+
+logout=Odjava
+
+register.username=Korisničko ime
+register.password=Lozinka
+register.password.retype=Lozinka još jednom
+register.firstName=Ime
+register.lastName=Prezime
+register.email=E-mail
+
+tooltip.question.edit=Uredi ovo pitanje
+tooltip.question.explanation=Dodaj objašnjenje odgovora za ovo pitanje
+tooltip.question.delete=Obriši ovo pitanje
+tooltip.question.export.detailed=Izvezi pitanja na vlastito računalo u željenom formatu
+tooltip.export.csv.detailed=Izvezi pitanja u .csv formatu. \nOvo je idealan oblik za ponovno spremanje u bazu podataka.
+tooltip.export.xls.detailed=Izvezi pitanja u .xls formatu. \nNakon izvoza, xls datoteka s pitanjima se može otvoriti MS Excel programom.
+
+news=Novosti
+news.input=Unos novosti
+news.add=Dodaj novu obavijest
+news.title=Naslov
+news.text=Obavijest
+news.type=Vrsta
+news.priority=Prioritet
+
+register=Registracija
+
+date.questionTable.format=dd MMMM yyyy, hh:mm
+
+questions=Pitanja
+question.hashtag=#
+question.time.created=Vrijeme kreiranja
+question.answer=Odgovor
+question.answers=Odgovori
+question.isCorrect=Točno?
+question.text=Tekst pitanja
+question.input=Unos pitanja
+question.input.advanced=Napredno
+question.type=Vrsta pitanja
+question.grade=Razred
+question.subject=Predmet
+question.chapter=Poglavlje
+question.chapters=Poglavlja
+question.image=Slika
+question.image.noImage=Nema slike
+question.chapter.noSelected=Nijedno poglavlje nije označeno
+question.chapter.multiple=Više poglavlja
+question.chapter.allChapters=Sva poglavlja
+question.content=Sadržaj pitanja
+question.correct=Točan odgovor
+question.incorrect=Pogrešan odgovor
+question.multiple.number=Broj mogućih odgovora
+question.submit=Pošalji
+question.submitter=Pošiljatelj
+question.edit=Uredi
+question.delete=Obriši
+question.cancel=Odustani
+question.explanation=Objašnjenje
+question.terms=Pojmovi
+question.filter=Filter
+question.filter.type=Filtriraj po
+question.export=Izvezi pitanja
+question.import=Uvezi pitanja
+question.extra=Dodatno
+question.finals=S državne mature
+question.finals.year=Godina
+question.competition=S natjecanja
+question.competition.year=Godina
+question.competition.level=Razina
+question.points=Bodovi
+question.trueFalse.followingQuestionIs=Tvrdnja navedena u pitanju je:
+
+import=Uvezi
+file.import=Uvoz iz datoteke
+
+modal.close=Zatvori
+
+specialTag.leavingExam=Državna matura
+specialTag.competition=natjecanje
+
+grade.notSelected=Razred nije odabran
+
+script.submit=Predaj skriptu
+
+export.csv=kao CSV
+export.xls=kao XLS
+export.pdf=kao PDF
+
+navbar.hello=Pozdrav
+
+player.quizzes=Kvizovi
+player.scripts=Skripte
+
+quiz=Kviz
+
+quiz.start=Započni kviz
+quiz.finish=Završi kviz
+quiz.confirm=Potvrdi kviz
+quiz.choose=Odaberi kviz
+quiz.numberOfQuestions=Broj pitanja
+quiz.number.correct=Broj točnih odgovora
+quiz.number.incorrect=Broj netočnih odgovora
+quiz.number.unanswered=Broj neodgovorenih pitanja
+quiz.true=Točno
+quiz.false=Netočno
+quiz.normal=Klasičan kviz
+quiz.type=Vrsta kviza
+quiz.type.normal=Klasični kviz
+quiz.type.competition=Kviz za natjecanja
+quiz.type.timeBattle=Borba s vremenom
+
+answer.correct=Točan odgovor
+answer.given=Vaš odgovor
+answer.explanation=Objašnjenje
+
+success.user.activated=Korisnički račun je uspješno aktiviran!
+
+error.unauthorized.edit=Nemate dozvolu za uređivanje odabranog pitanja. 
+error.user.activated=Niste aktivirali korisnički račun. Provjerite e-mail sandučić i pratite korake poslane u mailu.
+
+pagination.first=Prvo
+pagination.last=Posljednje
+pagination.previous=Prethodno
+pagination.next=Iduće
+
+info.register.player = <div>Igrač sustav koristi za učenje, pomoću njega rješava probne ispite i prati svoj napredak.</div><br><div>Registracija za igrača je automatska te nakon uspješno popunjenih polja u obrascu, na e-mail adresu stiže link za potvrdu registracije.</div><br><div>Prijava je također moguća putem <b>Facebooka</b> na početnoj stranici aplikacije</div> 
+info.register.admin = <div>Administrator je korisnik koji dodaje nova pitanja u sustav.</div><br><div>Registracija za administratora nije automatska te je potrebno pričekati određeno vrijeme na odgovor od administratora stranice.</div>
+info.question.inputAnswer = <div>Prilikom provjere točnosti korisnikovog odgovora na ovo pitanje, sustav će uspoređivati korisnikov odgovor s točnim odgovorom, zanemarujući mala i velika slova.</div><br><div> Ukoliko Vi kao autor pitanja smatrate da korisnik može ponuditi točan odgovor u nekoliko različitih oblika, možete navesti sve oblike jedan za drugim, jedino je važno da ih razdvojite znakom točka zarez (;). Primjerice:</div><br><div>Pitanje: Koliko je 2 + 2? <br>Odgovor: <b>četiri;4</b></div><div>Pitanje: Koji američki predsjednik je ukinuo ropstvo?<br> Odgovor:<b>Lincoln;Abraham Lincoln;Abe Lincoln</b></div>
+
+email.player.welcome.subject = Dobrodošli u Codex!
+email.player.welcome.content = Registracija je uspješno provedena. Molimo Vas da kliknete na link kako bi završili registraciju.
+
+PLAYER=Igrač
+ADMIN=Administrator
+
+SCHOOL = Školsko
+CITY = Općinsko/Gradsko
+REGION = Županijsko
+STATE = Državno
+
+FOR_USERS=Za korisnike
+FOR_ADMINS=Za administratore
+FOR_EVERYONE=Za sve
+
+NORMAL_PRIORITY=Normalan prioritet
+HIGH_PRIORITY=Visoki prioritet
+
+TEXT_FILTER=tekstu
+TYPE_FILTER=vrsti
+SUBJECT_FILTER=predmetu
+CHAPTER_FILTER=poglavlju
+DIFFICULTY_FILTER=težini
+SUBMITTER_FILTER=pošiljatelju
+
+MULTIPLE_CHOICE=Višestruki odabir - jedan točan
+MULTIPLE_ANSWER=Višestruki odabir - više točnih
+TRUE_FALSE=Točno/netočno
+INPUT_ANSWER=Unesi odgovor
+CONNECT_CORRECT=Poveži pojmove
+COMPOSED=Složeno pitanje
+

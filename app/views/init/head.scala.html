@@ -1,0 +1,32 @@
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>@Messages("app.name")</title>
+	
+	<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+	
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.5/flatly/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/css/tooltipster.min.css" />
+	<link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" />
+	<link rel="stylesheet" href="//cdn.datatables.net/responsive/1.0.6/css/dataTables.responsive.css" />
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" >
+	<link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/global.css")">
+	
+	<!-- CDN Javascripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/js/jquery.tooltipster.min.js"></script>
+	<script src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+	
+	<!-- Local Javascripts -->
+	<script type="text/javascript" src="@routes.Assets.at("javascripts/global.js")"></script>
+	<script type="text/javascript" src="@routes.Application.jsMessages()"></script>
+	<script type="text/javascript" src='@routes.Application.javascriptRoutes()'></script>
+
+</head>
+

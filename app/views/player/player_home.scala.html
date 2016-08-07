@@ -1,0 +1,35 @@
+@(mottoNumber: Integer)
+
+@import views.html.adminView._;
+@import views.html.init._;
+
+<html>
+
+<head>
+	
+	@head()
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/player/home.css")">
+	<script type="text/javascript" src="@routes.Assets.at("javascripts/player/playerHome.js")"></script>
+</head>
+
+<body>
+
+	<div class="middlePage">
+
+		<div class="page-header">
+			<h1 class="logo">@Messages("app.name")</h1> 
+			<h1><small class="motto">@Messages("app.motto" + mottoNumber)</small></h1>
+			      
+		</div>
+
+		<div class="col-md-12">
+			<div class="padding-top-10"><button class="choiceBtn choiceBtnFont" id="quizesBtn">@Messages("player.quizzes")</button><br/></div>
+			<div class="padding-top-10"><button class="choiceBtn choiceBtnFont" id="scriptsBtn">@Messages("player.scripts")</button><br/></div>
+			<div class="padding-top-10"><button class="choiceBtn choiceBtnFont" onclick=checkLoginState();>@Messages("logout")</button></div>
+		</div>
+		
+	</div>
+
+</body>
+</html>

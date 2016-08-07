@@ -1,0 +1,75 @@
+@(result: _root_.quiz.evaluate.QuizResult) 
+
+@import _root_.quiz.evaluate.QuizResult;
+
+<html>
+	<div>
+		<div class="custom-font font-size-40 italic center">@result.getNumberOfCorrectAnswers / @result.getNumberOfQuestions</div>
+		
+		<div class="center">
+			<div>@Messages("quiz.number.correct"): @result.getNumberOfCorrectAnswers</div>
+			<div>@Messages("quiz.number.incorrect"): @result.getNumberOfIncorrectAnswers</div>
+			<div>@Messages("quiz.number.unanswered"): @result.getNumberOfUnansweredQuestions</div>
+		</div>
+	
+		<div class="margin-top-10">
+
+			<table class="table table-bordered table-hover center">
+			
+				<thead>
+					<tr>
+						<th class="center">@Messages("question.hashtag")</th>
+						<th class="center">@Messages("question.text")</th>
+						<th class="center">@Messages("question.answer")</th>
+						<th class="center">@Messages("question.points")</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+				@for((eq, index) <- result.getEvaluatedQuestions.zipWithIndex){
+				<tr>
+					<td>@index</td>
+					<td class="result-question-text-cell">@eq.questionResult.question.questionText</td>
+					<td class="right-wrong-cell">
+					@if(eq.questionResult.isCorrect.toString().equals("CORRECT")) {
+						<img class="tooltip-custom" src="@routes.Assets.at("images/right.gif")" alt="RIGHT">
+					} else { @if(eq.questionResult.isCorrect.toString().equals("INCORRECT")) {
+						<img class="tooltip-custom cursor-pointer" src="@routes.Assets.at("images/animated.gif")" title="@eq.questionResult.answerRecap" alt="WRONG">
+					} else {
+						<img src="@routes.Assets.at("images/unanswered.gif")" alt="UNANSWERED">
+					}}
+ 					</td>
+ 					<td class="center">@eq.questionScore.pointsScored</td>
+				</tr>
+				}
+				</tbody>
+			</table>
+				
+		</div>
+		</div>
+
+	<script>
+	// Enable JS plugin tooltipster for every tag with .tooltip class
+	$('.tooltip-custom').tooltipster({
+		offsetX: 30,
+		position: 'right',
+		contentAsHTML: true,
+		animation: 'grow',
+		interactive: true,
+		autoclose: false,
+		delay: 100,
+		theme: 'tooltipster-default',
+		touchDevices: false,
+		trigger: 'click'
+	});
+	
+	$('.result-question-text-cell').quickfit({
+		min: 14,
+		max: 22,
+		truncate: false
+	});
+	
+	</script>
+
+
+</html>

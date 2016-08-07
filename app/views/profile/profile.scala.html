@@ -1,0 +1,83 @@
+@(user: models.User)
+
+@import views.html.playerView._;
+@import views.html.adminView._;
+@import views.html.init._;
+@import models.enums.UserType;
+
+<html>
+
+<head>
+	
+	@head()
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/profile/home.css")">
+	
+	<script type="text/javascript" src="@routes.Assets.at("javascripts/profile/profile.js")"></script>
+	
+</head>
+
+<body>
+
+	<div class="container">
+	
+		@if(session.get("userType") == "PLAYER") {
+			@playerHeader()
+		} else {
+			@adminHeader()
+		}
+		
+		
+		<div class="center-block">
+				<div class="card hovercard">
+					<div class="cardheader"></div> <!-- style="background: url('@{play.Play.application().configuration().getString("amazon.server.link")}codeximages/images/users/background/@{user.username}.jpg')" -->
+
+					<div class="avatar">
+						<img alt="" src="@{play.Play.application().configuration().getString("amazon.server.link")}codeximages/images/users/profile/@{user.username}.jpg">
+					</div>
+					
+					<div class="info">
+						<div class="title">
+							<a target="_blank" href="http://scripteden.com/">@user.getName</a>
+						</div>
+							
+						<div class="elements">
+							
+							<div class="basic">
+								<div class="desc">@user.username</div>
+								<div class="desc">@user.email</div>
+								<div class="desc">
+								@if(user.userType == UserType.ADMIN) {
+									@Messages("userType.ADMIN")
+								} else { @if(user.userType == UserType.PLAYER) {
+									@Messages("userType.PLAYER")
+								}}
+								</div>
+							</div>
+							
+							<div class="stats">stats</div>
+
+							<div class="achievements">achievements</div>
+
+							<div class="important">important</div>
+							
+						</div>
+					</div>
+
+
+					<div class="bottom">
+						<button id="btn-basic" type="button" class="btn btn-primary btn-circle"><i class="glyphicon glyphicon-info-sign"></i></button>
+						<button id="btn-stats" type="button" class="btn btn-warning btn-circle"><i class="glyphicon glyphicon-stats"></i></button>
+						<button id="btn-achievements" type="button" class="btn btn-success btn-circle"><i class="fa fa-trophy"></i></button>
+						<button id="btn-important" type="button" class="btn btn-danger btn-circle"><i class="glyphicon glyphicon-fire"></i></button>
+					</div>
+				</div>
+
+			</div>		
+		</div>
+		
+		@adminFooter()
+
+</body>
+
+</html>

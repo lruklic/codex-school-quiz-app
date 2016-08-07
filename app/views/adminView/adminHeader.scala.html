@@ -1,0 +1,33 @@
+<script type="text/javascript" src="@routes.Assets.at("/javascripts/adminHeader.js")"></script>
+
+
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">@Messages("app.name")</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="navbar">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="@routes.AdminController.adminHome"><span class="fa fa-home"></span> @Messages("navigation.home")</a></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="fa fa-question"></span> @Messages("navigation.questions") <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="@routes.AdminController.adminList">@Messages("navigation.questions.list")</a></li>
+						<li><a href="@routes.AdminController.adminQuestion">@Messages("navigation.questions.add")</a></li>
+					</ul>
+				</li>
+				<li><a href="@routes.PlayerController.playerHome"><span class="fa fa-trophy"></span> @Messages("navigation.quiz")</a></li>
+				<li><a href="@routes.ScriptController.add"><i class="fa fa-file-text"></i> @Messages("navigation.scripts")</a></li>
+        		<li><a href="@routes.ProfileController.profileHome"><span class="fa fa-user"></span> @Messages("navigation.profile")</a></li>
+				
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><p class="navbar-text">@Messages("navbar.hello"), @session.get("username")</p><li>
+				<li><a href="@routes.LoginController.logout"><span class="glyphicon glyphicon-log-out"></span> @Messages("navigation.logout")</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>

@@ -1,0 +1,94 @@
+@(grades: List[models.Grade], subjects: List[models.Subject], chapters: List[models.Chapter]) 
+
+@import views.html.playerView._;
+@import views.html.init._;
+
+<html>
+
+<head>
+	
+	@head()
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/global/body.css")">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/bootstrap-select.min.css")">
+	<link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/quiz/home.css")">
+	
+	<script type="text/javascript" src="@routes.Assets.at("/javascripts/bootstrap-select.min.js")"></script>
+	<script type="text/javascript" src="@routes.Assets.at("javascripts/quiz/home.js")"></script>
+</head>
+
+<body>
+	<div class="container">
+
+		@playerHeader()
+
+		<header><h1>@Messages("quiz")</h1></header>
+
+		@helper.form(routes.QuizController.startQuiz) {
+		<form class="form-horizontal">
+
+			<div class="form-group">
+				<div class="grade-picker">
+					<label class="control-label">@Messages("question.grade")</label>
+					<select class="form-control selectpicker" id="grade" name="grade">
+						<option value="not-selected">@Messages("grade.notSelected")</option>
+						@for(grade <- grades){
+						<option value="@grade.name">@Messages(grade.name)</option> 
+						}
+					</select>
+				</div>
+				<div class="subject-picker">
+					<label class="control-label">@Messages("question.subject")</label> 
+					<select class="form-control selectpicker" id="subject" name="subject">
+					@for(subject <- subjects){
+						<option value="@subject.name">@Messages(subject.name)</option> 
+					}
+					</select>
+				</div>
+				
+				<div class="chapter-picker">
+					<label class="control-label">@Messages("question.chapters")</label>
+					<select class="form-control selectpicker" multiple title="@Messages("question.chapter.allChapters")" name="chapters[]" id="chapter"> 
+					@for((chapter, l) <- chapters.zipWithIndex){
+						<option id="check-@l" value="@chapter.grade.name-@chapter.subject.name-@chapter.name">@Messages(chapter.name)</option>
+					}
+					</select>
+				</div>
+
+				<div class="additional-picker">
+					<div class="row">
+						<div class="col-xs-4">
+							<label class="control-label">@Messages("quiz.type")</label>
+							<select class="form-control selectpicker" name="quizType" id="quizType">
+								<option value="normal">@Messages("quiz.type.normal")</option>
+								<option value="competition">@Messages("quiz.type.competition")</option>
+								<option value="timeBattle" disabled>@Messages("quiz.type.timeBattle")</option>
+							</select>
+						</div>
+						<div class="col-xs-4">
+							<label class="control-label">@Messages("quiz.numberOfQuestions")</label> 
+							<select class="form-control selectpicker" name="numberOfQuestions" id="numberOfQuestions">
+								<option value="3">3</option>
+								<option value="10">10</option>
+								<option value="20">20</option>
+								<option value="30">30</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+
+			<div class="btn-submit form-group">
+				<button type="submit">@Messages("quiz.start")</button>
+			</div>
+
+		</form>
+
+		
+		}
+	</div>
+
+</body>
+</html>

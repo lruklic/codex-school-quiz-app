@@ -1,0 +1,30 @@
+@(clearanceLevel: Integer, news: List[models.Novelty]) 
+
+@import views.html.adminView._;
+@import views.html.init._;
+@import views.html.news._;
+
+<html>
+<head>
+
+@head()
+
+<script type="text/javascript" src="@routes.Assets.at("javascripts/question-table.js")"></script>
+
+</head>
+
+<body>
+	<div class="container">
+		
+		@adminHeader()
+	
+		<header><h2>@Messages("news")</h2></header>
+	
+		@news_list(news, clearanceLevel)
+		
+	</div>
+	
+	@adminFooter()
+	
+</body>
+</html>

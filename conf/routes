@@ -1,0 +1,61 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.StartController.redirect()
+GET     /messages.js                controllers.Application.jsMessages()
+
+# Auth
+GET		/login						controllers.LoginController.login()
+POST	/login						controllers.LoginController.authenticate()
+GET		/logout						controllers.LoginController.logout()
+POST	/facebookLogin				controllers.LoginController.facebookAuthenticate()
+
+# Register
+GET		/register					controllers.RegisterController.register()
+POST	/register					controllers.RegisterController.submit()
+GET		/activation/:link			controllers.ActivationController.activate(link: String)
+
+# Question
+POST	/question					controllers.QuestionController.submit()
+GET		/question/edit/:id			controllers.QuestionController.edit(id: Long)
+DELETE	/question/delete/:id		controllers.QuestionController.deleteQuestion(id: Long)
+
+
+# Port
+GET		/question/export/:exportType			controllers.PortController.exportQuestions(exportType: String)
+POST	/import						controllers.PortController.importQuestions()
+
+# Test data fill
+POST	/data						controllers.TestDataController.fill()
+
+# News
+GET		/news/add					controllers.NewsController.add()
+POST	/news/add					controllers.NewsController.submit()
+
+# Profile
+GET		/profile					controllers.ProfileController.profileHome()
+
+# Admin
+GET		/admin/home					controllers.AdminController.adminHome()
+GET		/admin/list					controllers.AdminController.adminList()
+GET		/admin/question				controllers.AdminController.adminQuestion()
+
+# Scripts
+GET		/admin/scripts/add			controllers.ScriptController.add()
+POST	/admin/scripts/add			controllers.ScriptController.submit()
+
+# Player
+GET		/player/home				controllers.PlayerController.playerHome()
+
+# Quiz
+GET		/quiz/home					controllers.QuizController.quizHome()
+POST	/quiz/start					controllers.QuizController.startQuiz()
+POST	/quiz/evaluate				controllers.QuizController.evaluateQuiz()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+
+GET		/javascriptRoutes			controllers.Application.javascriptRoutes
